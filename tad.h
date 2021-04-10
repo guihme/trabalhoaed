@@ -18,4 +18,8 @@ typedef ELEMENTO* PONT;
 typedef struct {
     PONT inicio;
     double soma;
-};
+} LISTA;
+
+void inicializarLista(LISTA* p);
+PONT busca(LISTA* p, char produto[50], PONT* antes);
+int inserirElemento(LISTA* p, REGISTRO novo);
