@@ -33,3 +33,4 @@ int inserirElemento(LISTA* p, REGISTRO novo) {
         antes->prox = i;
     }
 }
+//testando clonagem
