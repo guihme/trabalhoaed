@@ -10,7 +10,7 @@ inicializarLista(&lista);
 int comanda[MAX], opcao;
 //Menu
 
-printf("0-Parar programa\n1-Criar comanda\n2-Inserir produtos na comanda\n3-Excluir produtos da comanda\n4-Exibir comanda\n5-Comanda paga(excluir\n");
+printf("0-Parar programa\n1-Criar comanda\n2-Inserir produtos na comanda\n3-Excluir produtos da comanda\n4-Exibir comanda\n5-Comanda paga(excluir)\n");
 scanf("%d", &opcao);
  while (opcao != 0)
  {
