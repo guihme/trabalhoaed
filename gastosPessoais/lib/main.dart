@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 import 'models/transaction.dart';
 import './components/transaction_list.dart';
+import './components/transaction_form.dart';
 
 main() => runApp(ExpensessApp());
 
