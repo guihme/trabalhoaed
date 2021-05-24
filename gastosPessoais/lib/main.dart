@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
+import 'package:gastosPessoais/components/chart.dart';
 import 'models/transaction.dart';
 import './components/transaction_list.dart';
 import './components/transaction_form.dart';
+import 'components/chart.dart';
 
 main() => runApp(ExpensessApp());
 
