@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'chart_bar.dart';
 
+//Validando dados que vão aparecer no grafico
 class Chart extends StatelessWidget {
   final List<Transaction> recentTransaction;
 
@@ -21,6 +22,7 @@ class Chart extends StatelessWidget {
         bool sameMonth = recentTransaction[i].date.month == weekDay.month;
         bool sameYear = recentTransaction[i].date.year == weekDay.year;
 
+      //caso já exita uma transação naquele dia, faz a soma com o valor dela
         if (sameDay && sameMonth && sameYear) {
           totalSum += recentTransaction[i].value;
         }
@@ -38,7 +40,8 @@ class Chart extends StatelessWidget {
       return sum + tr['value'];
     });
   }
-
+/*Preenchedo valores validos para o grafico, organizando dia,
+valor correpondente do dia e porcentagem do dia em relação aos gastos semanais*/
   @override
   Widget build(BuildContext context) {
     return Card(

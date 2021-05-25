@@ -8,6 +8,7 @@ import 'components/chart.dart';
 
 main() => runApp(ExpensessApp());
 
+//Ajustes das fonte
 class ExpensessApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -46,6 +47,8 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
+//Lista de transações para o grafico
+
 class _MyHomePageState extends State<MyHomePage> {
   final List<Transaction> _transactions = [];
 
@@ -56,6 +59,8 @@ class _MyHomePageState extends State<MyHomePage> {
       ));
     }).toList();
   }
+
+//Adicionar transação na lista
 
   _addTransaction(String title, double value, DateTime date) {
     final newTransaction = Transaction(
@@ -71,13 +76,16 @@ class _MyHomePageState extends State<MyHomePage> {
 
     Navigator.of(context).pop();
   }
-
+ 
+ //Excluir trasação da lista
+ // 
   _deleteTransaction(String id) {
     setState(() {
       _transactions.removeWhere((tr) => tr.id == id);
     });
   }
 
+//Botão modal para nova transação
   _openTransactionFormModal(BuildContext context) {
     showModalBottomSheet(
       context: context,
@@ -87,6 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
+//Estrutura principal do app
   @override
   Widget build(BuildContext context) {
     return Scaffold(

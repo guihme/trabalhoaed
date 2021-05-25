@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//Grafico
 class ChartBar extends StatelessWidget {
   final String label;
   final double value;
@@ -11,6 +12,7 @@ class ChartBar extends StatelessWidget {
     this.percentage,
   });
 
+//Organizando estrutura do grafico
   @override
   Widget build(BuildContext context) {
     return Column(

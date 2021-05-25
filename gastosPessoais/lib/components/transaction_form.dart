@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+
 class TransactionForm extends StatefulWidget {
   final Function(String, double, DateTime) onSubmit;
 
@@ -9,7 +10,7 @@ class TransactionForm extends StatefulWidget {
   @override
   _TransactionFormState createState() => _TransactionFormState();
 }
-
+//Verificando se a transação é valida para inserir na lista
 class _TransactionFormState extends State<TransactionForm> {
   final _titleController = TextEditingController();
   final _valueController = TextEditingController();
@@ -24,7 +25,7 @@ class _TransactionFormState extends State<TransactionForm> {
 
     widget.onSubmit(title, value, _selectedDate);
   }
-
+  //start do calendário
   _showDatePicker() {
     showDatePicker(
       context: context,
@@ -40,7 +41,7 @@ class _TransactionFormState extends State<TransactionForm> {
       });
     });
   }
-
+//Janela de nova transação
   @override
   Widget build(BuildContext context) {
     return Card(
