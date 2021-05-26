@@ -16,8 +16,8 @@ class ExpensessApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: MyHomePage(),
       theme: ThemeData(
-          primarySwatch: Colors.purple,
-          accentColor: Colors.amber,
+          primarySwatch: Colors.orange,
+          accentColor: Colors.orange,
           fontFamily: 'Quicksand',
           textTheme: ThemeData.light().textTheme.copyWith(
               headline6: TextStyle(
@@ -76,9 +76,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
     Navigator.of(context).pop();
   }
- 
- //Excluir trasação da lista
- // 
+
+  //Excluir trasação da lista
+  //
   _deleteTransaction(String id) {
     setState(() {
       _transactions.removeWhere((tr) => tr.id == id);
