@@ -9,6 +9,7 @@ import 'components/classValor.dart';
 
 main() => runApp(ExpensessApp());
 
+//Organizando as fontes
 class ExpensessApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -54,6 +55,7 @@ class MyHomePage extends StatefulWidget {
 
 TextEditingController _controllerSaldo = TextEditingController();
 
+//Lista de transações para o grafico
 class _MyHomePageState extends State<MyHomePage> {
   final List<Transaction> _transactions = [];
   num valor = 0;
@@ -66,6 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
     }).toList();
   }
 
+//Função para atualizar o saldo
   atualizaValorAppBar() {
     setState(() {
       temporaria.valorAuxiliarTemporaria =
@@ -73,6 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+//Função para adicionar uma nova transação
   _addTransaction(String title, double value, DateTime date) {
     final newTransaction = Transaction(
       id: Random().nextDouble().toString(),
@@ -88,12 +92,14 @@ class _MyHomePageState extends State<MyHomePage> {
     Navigator.of(context).pop();
   }
 
+//Função para excluir uma transação
   _deleteTransaction(String id) {
     setState(() {
       _transactions.removeWhere((tr) => tr.id == id);
     });
   }
 
+//Botão para abrir uma nova transação e atualiza o saldo
   _openTransactionFormModal(BuildContext context) {
     showModalBottomSheet(
       context: context,
@@ -104,6 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
     atualizaValorAppBar();
   }
 
+//App Bar, mostra o valor do saldo e possui o botão para adicionar saldo
   @override
   Widget build(BuildContext context) {
     final appBar = AppBar(
@@ -160,6 +167,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
+//Função para adicionar saldo
   showAlertDialog3(BuildContext context) {
     var alert = Container(
         color: Color.fromRGBO(81, 85, 90, 1),
@@ -239,6 +247,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
+//Função para verificar se a nova transação é valida
 class TransactionForm extends StatefulWidget {
   final Function(String, double, DateTime) onSubmit;
   TransactionForm(this.onSubmit);
@@ -264,6 +273,7 @@ class _TransactionFormState extends State<TransactionForm> {
     widget.onSubmit(title, value, _selectedDate);
   }
 
+//Função para abrir o calendário
   _showDatePicker() {
     showDatePicker(
       context: context,
@@ -280,6 +290,7 @@ class _TransactionFormState extends State<TransactionForm> {
     });
   }
 
+//Tela de nova transação
   @override
   Widget build(BuildContext context) {
     return Card(
