@@ -55,7 +55,7 @@ class MyHomePage extends StatefulWidget {
 
 TextEditingController _controllerSaldo = TextEditingController();
 
-//Lista de transações para o grafico
+//Função de transações para o grafico
 class _MyHomePageState extends State<MyHomePage> {
   final List<Transaction> _transactions = [];
   num valor = 0;
